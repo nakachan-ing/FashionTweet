@@ -1,24 +1,62 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
+| Column       | Type          | Options     |
+| ------------ | --------------| ----------- |
+| first_name   | string        | null: false |
+| last_name    | string        | null: false |
+| email        | string        | null: false |
+| password     | string        | null: false |
+| introduction | string        |             |
+| image        | ActiveStorage | null: false |
 
-Things you may want to cover:
+### Association
+- has_many :photos
 
-* Ruby version
 
-* System dependencies
+## photos テーブル
+| Column      | Type          | Options                        |
+| ----------- | ------------- | ------------------------------ |
+| snap        | ActiveStorage | null: false                    |
+| title       | string        | null: false                    |
+| description | string        | null: false                    |
+| tag_id      | integer       | null: false                    |
+| price_id    | integer       | null: false                    |
+| user_id     | references    | null: false, foreign_key: true |
 
-* Configuration
+### Association
+- belongs_to :user
+- has_many :photo_tags
+- has_many :tags, through: :photo_tags
 
-* Database creation
 
-* Database initialization
+## tags テーブル
+| Column | Type    | Options     |
+| ------ | ------- | ----------- |
+| name   | integer | null: false |
 
-* How to run the test suite
+### Association
+- has_many :photo_tags
+- has_many :photos, through: :photo_tags
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## photo_tags テーブル
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| photo   | references | null: false, foreign_key: true |
+| tag     | references | null: false, foreign_key: true |
 
-* ...
+### Association
+- belongs_to :photo
+- belongs_to :tag
+
+## comments テーブル
+| Column  | Type       | Options                        |
+| ------  | :--------- | ------------------------------ |
+| text    | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| photo   | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :photo
