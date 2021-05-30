@@ -1,15 +1,15 @@
 # README
 
 ## users テーブル
-| Column       | Type          | Options     |
-| ------------ | --------------| ----------- |
-| first_name   | string        | null: false |
-| last_name    | string        | null: false |
-| nickname     | string        | null: false |
-| email        | string        | null: false |
-| password     | string        | null: false |
-| introduction | string        |             |
-| image        | ActiveStorage | null: false |
+| Column        | Type          | Options     |
+| ------------  | --------------| ----------- |
+| first_name    | string        | null: false |
+| last_name     | string        | null: false |
+| nickname      | string        | null: false |
+| email         | string        | null: false |
+| password      | string        | null: false |
+| introduction  | string        |             |
+| profile_image | ActiveStorage | null: false |
 
 ### Association
 - has_many :photos
