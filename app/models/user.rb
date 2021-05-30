@@ -12,7 +12,7 @@ class User < ApplicationRecord
     validates :first_name
   end
 
-  validates :nickname
+  validates :nickname, presence: true
 
   validates :introduce, length: { maximum: 200 }
   has_one_attached :profile_image
