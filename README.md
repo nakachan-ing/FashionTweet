@@ -21,7 +21,6 @@
 | snap        | ActiveStorage | null: false                    |
 | title       | string        | null: false                    |
 | description | string        | null: false                    |
-| tag_id      | integer       | null: false                    |
 | price_id    | integer       | null: false                    |
 | user_id     | references    | null: false, foreign_key: true |
 
@@ -42,10 +41,10 @@
 
 
 ## photo_tags テーブル
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| photo   | references | null: false, foreign_key: true |
-| tag     | references | null: false, foreign_key: true |
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| photo_id | references | null: false, foreign_key: true |
+| tag_id   | references | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :photo

@@ -8,11 +8,22 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../scripts")
-require("../sb-admin-2")
-require("../sb-admin-2.min")
-require("../vendor/jquery/jquery.min")
-require("../vendor/bootstrap/js/bootstrap.bundle.min")
-require("../vendor/jquery-easing/jquery.easing.min")
+require("sb-admin-2")
+require("sb-admin-2.min")
+require("vendor/jquery/jquery.min")
+require("vendor/bootstrap/js/bootstrap.bundle.min")
+require("vendor/jquery-easing/jquery.easing.min")
+require("slick")
+require("slick.min")
+
+// $(document).on('ready', function() {
+//   $(".regular").slick({
+//     dots: true,
+//     infinite: true,
+//     slidesToShow: 3,
+//     slidesToScroll: 3
+//   });
+// });
 
 
 //= require jquery
