@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
-  validates :introduce, length: { maximum: 200 }
+  validates :introduction, length: { maximum: 200 }
   has_one_attached :profile_image
 
 end
