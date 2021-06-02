@@ -1,6 +1,6 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="index.html">LOGO</a>
+    <li><%= link_to "LOGO", root_path, class: "navbar-brand ps-3" %></li>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
     <!-- Navbar Search-->
@@ -15,12 +15,13 @@
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="register.html">新規登録</a></li>
-                <li><a class="dropdown-item" href="login.html">ログイン</a></li>
-                <!-- ログインしているときの表示 -->
-                <li><a class="dropdown-item" href="mypage_index.html">Username</a></li>
-                <!-- <li><a class="dropdown-item" href="#!">ログアウト</a></li> -->
-                <!-- ログインしているときの表示 -->
+                <% if user_signed_in? %>
+                    <li><%= link_to current_user.nickname, user_path(current_user.id), class: "dropdown-item" %></li>
+                    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "dropdown-item" %></li>
+                <% else %>
+                    <li><%= link_to 'ログイン', new_user_session_path, class: "dropdown-item" %></li>
+                    <li><%= link_to '新規登録', new_user_registration_path, class: "dropdown-item" %></li>
+                <% end %>
             </ul>
         </li>
     </ul>

@@ -11,13 +11,23 @@
                           <div class="row">
                               <div class="col-md">
                                   <%= form_with model: current_user, local: true do |f| %>
-                                  <%= render 'shared/error_messages', model: f.object %> 
+                                  <%= render 'shared/error_messages', model: f.object %>
                                       <br>
                                       <div class="form-group">
                                           <%= f.label :nickname, "Nickname 必須" %>
                                           <%= f.text_field :nickname, class: "form-control" %>
                                       </div>
                                       <br>
+                                      <!--<div class="form-group">
+                                          <%= f.label :password, "password 必須" %>
+                                          <%= f.password_field :password, class: "form-control" %>
+                                      </div>
+                                      <br>
+                                      <div class="form-group">
+                                          <%= f.label :password_confirmation, "password_confirmation 必須" %>
+                                          <%= f.password_field :password_confirmation, class: "form-control" %>
+                                      </div>
+                                      <br>-->
                                       <div class="form-group">
                                           <%= f.label :email, "Email 必須" %>
                                           <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
@@ -40,7 +50,7 @@
                               <div class="col-1">
                               </div>
                               <div class="col-5">
-                                  <%=link_to "戻る", user_path(:id), class:"btn btn-outline-secondary btn-block" %>
+                                  <%=link_to "戻る", user_path(current_user.id), class:"btn btn-outline-secondary btn-block" %>
                               </div>
                               <div class="col-5">
                                   <%= f.submit "更新する", class:"btn btn-outline-primary btn-block" %>

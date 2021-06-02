@@ -16,15 +16,6 @@ require("vendor/jquery-easing/jquery.easing.min")
 require("slick")
 require("slick.min")
 
-// $(document).on('ready', function() {
-//   $(".regular").slick({
-//     dots: true,
-//     infinite: true,
-//     slidesToShow: 3,
-//     slidesToScroll: 3
-//   });
-// });
-
 
 //= require jquery
 //= require jquery_ujs
