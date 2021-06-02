@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
+  before_action :move_to_index, only: [:show, :edit, :update]
+ 
   
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
@@ -20,5 +22,18 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:nickname, :email, :profile_image, :introduction)
   end
-    
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to root_path and return
+    end
+    unless @user == current_user
+      redirect_to root_path
+    end
+  end
+
 end
