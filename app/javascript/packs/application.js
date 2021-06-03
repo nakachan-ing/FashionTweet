@@ -7,6 +7,19 @@ require("@rails/ujs").start()
 // require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("../scripts")
+require("sb-admin-2")
+require("sb-admin-2.min")
+require("vendor/jquery/jquery.min")
+require("vendor/bootstrap/js/bootstrap.bundle.min")
+require("vendor/jquery-easing/jquery.easing.min")
+require("slick")
+require("slick.min")
+
+
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
