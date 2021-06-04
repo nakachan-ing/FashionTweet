@@ -13,6 +13,7 @@
                             <div class="col-md">
                                 <div class="form-group">
                                 <%= form_with model: @tag, local: true do |f| %>
+                                <!--<%= render 'shared/error_messages', model: f.object %>-->
                                   <%= f.label :tag, "タグ" %>
                                   <%= f.text_field :name, class: "form-control", placeholder: "タグを新規登録する" %>
                                   <br>

@@ -12,7 +12,8 @@
                         <br>
                         <div class="row">
                             <div class="col-md">
-                                <%= form_with model: @photo, local: true do |f| %>
+                                <%= form_with model: @photo, data: { persist: 'garlic' }, local: true do |f| %>
+                                <%= render 'shared/error_messages', model: f.object %>
                                     <div class="form-group">
                                         <%= f.label :snap, "画像 必須" %>
                                         <%= f.file_field :snap, accept: "image/jpeg, image/png" %>
@@ -27,7 +28,7 @@
                                     <div class="col-5">
                                       <%=link_to '新規登録', new_tag_path, class:"btn btn-primary btn-block" %>
                                     </div>
-                                    <select class="form-control js-example-basic-multiple" name="states[]" multiple="multiple">
+                                    <select class="form-control js-example-basic-multiple" name="tag_ids[]" multiple="multiple">
                                         <option value="">---</option>
                                         <% Tag.all.each do |tag| %>
                                           <option value=<%= tag.id %>><%= tag.name %></option>

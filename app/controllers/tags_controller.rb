@@ -5,6 +5,11 @@ class TagsController < ApplicationController
   end
   def create
     @tag = Tag.create(tag_params)
+    if @tag.save
+      redirect_to new_photo_path
+    else
+      render :new
+    end
   end
 
   private
