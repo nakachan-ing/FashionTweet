@@ -1,0 +1,41 @@
+<body class="sb-nav-fixed">
+  <%= render 'shared/header' %> 
+      <div id="layoutSidenav_content">
+          <main>
+              <section class="py-5">
+                  <div class="pick-up-slide text-center">
+                      <h1 class="display-6 text-dark mb-3">タグを新規登録する</h1>
+                  </div>
+                  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="border col-7">
+                        <br>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-group">
+                                <%= form_with model: @tag, local: true do |f| %>
+                                  <%= f.label :tag, "タグ" %>
+                                  <%= f.text_field :name, class: "form-control", placeholder: "タグを新規登録する" %>
+                                  <br>
+                                  <div class="row center-block text-center">
+                                      <div class="col-1">
+                                      </div>
+                                     <div class="col-5">
+                                        <%=link_to '戻る', new_photo_path, class:"btn btn-outline-secondary btn-block" %>
+                                    </div>
+                                    <div class="col-5">
+                                        <%= f.submit "登録", class:"btn btn-outline-primary btn-block" %>
+                                    </div>
+                                  </div>
+                                <% end %>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                  </div>
+              </section>
+          </main>
+          <%= render 'shared/footer' %> 
+      </div>
+  </div>
+</body>
