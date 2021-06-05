@@ -12,7 +12,7 @@
                         <br>
                         <div class="row">
                             <div class="col-md">
-                                <%= form_with model: @photo, data: { persist: 'garlic' }, local: true do |f| %>
+                                <%= form_with model: @photo, url: photos_path, local: true do |f| %>
                                 <%= render 'shared/error_messages', model: f.object %>
                                     <div class="form-group">
                                         <%= f.label :snap, "画像 必須" %>
@@ -24,16 +24,18 @@
                                         <%= f.text_field :title, class: "form-control", placeholder: "" %>
                                     </div>
                                     <div class="form-group">
-                                    <%= f.label :tag, "タグ" %>
+                                    <%= f.label :tag_ids, "タグ" %>
                                     <div class="col-5">
                                       <%=link_to '新規登録', new_tag_path, class:"btn btn-primary btn-block" %>
                                     </div>
-                                    <select class="form-control js-example-basic-multiple" name="tag_ids[]" multiple="multiple">
+                                    <%= f.collection_select(:tag_id, Tag.all, :id, :name, {}, {class:"form-control js-example-basic-multiple",multiple: true, include_hidden: false}) %>
+                                    <!--<select class="form-control js-example-basic-multiple" name="tag_ids[]" multiple="multiple">
                                         <option value="">---</option>
                                         <% Tag.all.each do |tag| %>
                                           <option value=<%= tag.id %>><%= tag.name %></option>
                                         <% end %>
-                                    </select>
+                                    </select>-->
+                                    
                                     </div>
                                     <div class="form-group">
                                         <%= f.label :price_id, "Total金額" %>
