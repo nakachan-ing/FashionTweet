@@ -9,7 +9,7 @@
 | email         | string        | null: false |
 | password      | string        | null: false |
 | introduction  | string        |             |
-| profile_image | ActiveStorage | null: false |
+| profile_image | ActiveStorage |             |
 
 ### Association
 - has_many :photos
