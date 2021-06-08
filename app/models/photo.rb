@@ -9,5 +9,4 @@ class Photo < ApplicationRecord
   validates :title, length: { maximum: 40 }
   validates :description, length: { maximum: 500 }
   validates :price_id, numericality: { other_than: 1, message: 'Select' }
-
 end

@@ -1,8 +1,8 @@
 class TagsController < ApplicationController
-
   def new
     @tag = Tag.new
   end
+
   def create
     @tag = Tag.create(tag_params)
     if @tag.save
@@ -13,6 +13,7 @@ class TagsController < ApplicationController
   end
 
   private
+
   def tag_params
     params.require(:tag).permit(:name)
   end
