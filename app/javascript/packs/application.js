@@ -15,7 +15,7 @@ require("vendor/bootstrap/js/bootstrap.bundle.min")
 require("vendor/jquery-easing/jquery.easing.min")
 require("slick")
 require("slick.min")
-
+require("../garlic")
 
 //= require jquery
 //= require jquery_ujs

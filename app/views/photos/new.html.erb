@@ -1,0 +1,64 @@
+
+<body class="sb-nav-fixed">
+  <%= render 'shared/header' %> 
+      <div id="layoutSidenav_content">
+          <main>
+              <section class="py-5">
+                  <div class="pick-up-slide text-center">
+                      <h1 class="display-6 text-dark mb-3">投稿内容を入力する</h1>
+                  </div>
+                  <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="border col-7">
+                        <br>
+                        <div class="row">
+                            <div class="col-md">
+                                <%= form_with model: @photo, url: photos_path, local: true do |f| %>
+                                <%= render 'shared/error_messages', model: f.object %>
+                                    <div class="form-group">
+                                        <%= f.label :snap, "画像 必須" %>
+                                        <%= f.file_field :snap, accept: "image/jpeg, image/png" %>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <%= f.label :title, "コーディネートのタイトル 必須" %>
+                                        <%= f.text_field :title, class: "form-control", placeholder: "" %>
+                                    </div>
+                                    <div class="form-group">
+                                    <%= f.label :names, "タグ" %>
+                                    <div class="col-5">
+                                      <%=link_to '新規登録', new_tag_path, class:"btn btn-primary btn-block" %>
+                                    </div>
+                                    <%= f.collection_select(:tag_ids, Tag.all, :id, :name, {}, {class:"form-control js-example-basic-multiple",multiple: true, include_hidden: false}) %>
+                                    </div>
+                                    <div class="form-group">
+                                        <%= f.label :price_id, "Total金額" %>
+                                        <%= f.collection_select(:price_id, Price.all, :id, :name, {}, {class:"form-control"}) %>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <%= f.label :description, "詳細コメント 必須" %>
+                                        <%= f.text_area :description, class: "form-control", rows: "3" %>
+                                    </div>
+                                    <br>
+                                    <div class="row center-block text-center">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col-5">
+                                            <%=link_to '戻る', root_path, class:"btn btn-outline-secondary btn-block" %>
+                                        </div>
+                                        <div class="col-5">
+                                            <%= f.submit "投稿する", class:"btn btn-outline-primary btn-block" %>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                  </div>
+              </section>
+          </main>
+          <%= render 'shared/footer' %> 
+      </div>
+  </div>
+</body>

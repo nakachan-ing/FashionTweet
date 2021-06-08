@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   before_action :move_to_index, only: [:show, :edit, :update]
- 
-  
+
   def show
   end
 
@@ -14,11 +13,12 @@ class UsersController < ApplicationController
       bypass_sign_in(current_user)
       redirect_to user_path(current_user.id)
     else
-        render :edit
+      render :edit
     end
   end
 
   private
+
   def user_params
     params.require(:user).permit(:nickname, :email, :profile_image, :introduction)
   end
@@ -28,12 +28,8 @@ class UsersController < ApplicationController
   end
 
   def move_to_index
-    unless user_signed_in?
-      redirect_to root_path and return
-    end
-    unless @user == current_user
-      redirect_to root_path
-    end
-  end
+    redirect_to root_path and return unless user_signed_in?
 
+    redirect_to root_path unless @user == current_user
+  end
 end
