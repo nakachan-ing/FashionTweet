@@ -2,7 +2,8 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index
-    @photos = Photo.all.order(created_at: :desc)
+    @photos = Photo.includes(:user).order('created_at DESC')
+    @random = Photo.order("RAND()").limit(6)
   end
 
   def new
