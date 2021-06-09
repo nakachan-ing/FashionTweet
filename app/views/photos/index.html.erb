@@ -42,7 +42,12 @@
                     </div>
                     <div class="container px-4 px-lg-5 mt-5">
                         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                            <div class="col mb-5">
+                            <% unless @photos.empty? %>
+                                <%= render partial: "photo", collection: @photos %>
+                            <% else %>
+                                <%= image_tag "https://dummyimage.com/450x300/dee2e6/6c757d.jpg", class: "card-img-top" %>
+                            <% end %>
+                            <%# <div class="col mb-5">
                                 <div class="card h-100">
                                     <!-- Product image-->
                                     <img class="card-img-top" style="height: 328px;" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
@@ -231,7 +236,7 @@
                                             <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="show.html">詳細</a></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> %>
                         </div>
                     </div>
                 </section>
