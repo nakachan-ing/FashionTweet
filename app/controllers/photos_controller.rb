@@ -21,6 +21,11 @@ class PhotosController < ApplicationController
     end
   end
 
+  def show
+    @photo = Photo.find(params[:id])
+    @photo_tags = @photo.photo_tags.order('created_at DESC')
+  end
+
   private
 
   def photo_params
