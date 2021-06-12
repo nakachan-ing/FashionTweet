@@ -4,18 +4,18 @@
     <div class="container px-4 px-lg-5 my-5">
         <h1 class="display-6 fw-bolder"><%= @photo.user.nickname%></h1>
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <!--<div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="./assets/img/show-image.jpg" alt="..." /></div>-->
             <div class="col-md-6"><%= image_tag @photo.snap, class: "card-img-top mb-5 mb-md-0" %></div>
             <div class="col-md-6">
-                <!-- <div class="small mb-1">SKU: BST-498</div> -->
-                <div class="row center-block text-center small mb-1">
-                  <div class="col-lg-5">
-                    <%=link_to "編集", "#", class:"btn btn-outline-primary btn-block" %>
-                  </div>
-                  <div class="col-lg-5">
-                    <%=link_to "削除", "#", class:"btn btn-outline-secondary btn-block" %>
-                  </div>
-                </div>
+                <% if @photo.user == current_user %>
+                    <div class="row center-block text-center small mb-1">
+                        <div class="col-lg-5">
+                        <%=link_to "編集", "#", class:"btn btn-outline-primary btn-block" %>
+                        </div>
+                        <div class="col-lg-5">
+                        <%=link_to "削除", "#", class:"btn btn-outline-secondary btn-block" %>
+                        </div>
+                    </div>
+                <% end %>
                 <h1 class="display-6 fw-bolder"><%= @photo.title %></h1>
                 <div class="fs-5 mb-5">
                     <% @photo_tags.each do |tag|%>
