@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :move_to_index, only: [:show, :edit, :update]
+  before_action :move_to_index, only: [:edit, :update]
 
   def show
+    @photos = @user.photos.order('created_at DESC')
   end
 
   def edit
