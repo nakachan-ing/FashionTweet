@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @photos = Photo.includes(:user).order('created_at DESC')
@@ -19,6 +19,11 @@ class PhotosController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @photo = Photo.find(params[:id])
+    @photo_tags = @photo.photo_tags.order('created_at DESC')
   end
 
   private
