@@ -31,8 +31,11 @@ class PhotosController < ApplicationController
   end
 
   def update
-    @photo.update(photo_params)
-    redirect_to photo_path(@photo.id)
+    if @photo.update(photo_params)
+      redirect_to photo_path(params[:id])
+    else
+      render :edit
+    end
   end
 
   private
