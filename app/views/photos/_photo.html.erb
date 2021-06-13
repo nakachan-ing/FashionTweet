@@ -7,6 +7,11 @@
             <div class="text-center">
                 <!-- Product name-->
                 <h5 class="fw-bolder"><%= photo.title %></h5>
+                <div>
+                    <% photo.photo_tags.each do |tag|%>
+                        <span>#<%= tag.tag.name %></span>
+                    <% end %>
+                </div>
                 <!-- Product price-->
                 <%=link_to photo.user.nickname, user_path(photo.user.id), style: "text-decoration: none; color: black;" %>
             </div>

@@ -1,5 +1,7 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_photo, only: [:show, :edit, :update]
+  before_action :move_to_index, only: [:edit, :update]
 
   def index
     @photos = Photo.includes(:user).order('created_at DESC')
@@ -22,8 +24,15 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @photo = Photo.find(params[:id])
     @photo_tags = @photo.photo_tags.order('created_at DESC')
+  end
+
+  def edit
+  end
+
+  def update
+    @photo.update(photo_params)
+    redirect_to photo_path(@photo.id)
   end
 
   private
@@ -31,4 +40,15 @@ class PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:snap, :title, :price_id, :description, { tag_ids: [] }).merge(user_id: current_user.id)
   end
+
+  def set_photo
+    @photo = Photo.find(params[:id])
+  end
+
+
+  def move_to_index
+    redirect_to root_path and return unless user_signed_in?
+    redirect_to root_path unless @photo.user == current_user
+  end
+
 end

@@ -9,7 +9,7 @@
                 <% if @photo.user == current_user %>
                     <div class="row center-block text-center small mb-1">
                         <div class="col-lg-5">
-                        <%=link_to "編集", "#", class:"btn btn-outline-primary btn-block" %>
+                        <%=link_to "編集", edit_photo_path(@photo.id), class:"btn btn-outline-primary btn-block" %>
                         </div>
                         <div class="col-lg-5">
                         <%=link_to "削除", "#", class:"btn btn-outline-secondary btn-block" %>
@@ -28,7 +28,7 @@
     </div>
 </section>
 <!-- Related items section-->
-<section class="py-5 bg-light">
+<%# <section class="py-5 bg-light">
     <div class="container px-4 px-lg-5 mt-5">
         <h2 class="fw-bolder mb-4">Comments</h2>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
@@ -132,6 +132,6 @@
             </div>
         </div>
     </div>
-</section>
+</section> %>
 <!-- Footer-->
 <%= render 'shared/footer' %>
