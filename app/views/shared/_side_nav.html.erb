@@ -14,7 +14,7 @@
                         <a class="nav-link" href="#">Girls</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseItems" aria-expanded="false" aria-controls="collapseItems">
+                <!--<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseItems" aria-expanded="false" aria-controls="collapseItems">
                     アイテムで探す
                 </a>
                 <div class="collapse" id="collapseItems" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
@@ -22,14 +22,17 @@
                         <a class="nav-link" href="#">Baby</a>
                         <a class="nav-link" href="#">Kids</a>
                     </nav>
-                </div>
+                </div>-->
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePrices" aria-expanded="false" aria-controls="collapsePrices">
                     値段で探す
                 </a>
                 <div class="collapse" id="collapsePrices" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">０〜</a>
-                        <a class="nav-link" href="#">5000〜</a>
+                        <%=link_to '0〜1500円', "#", class:"nav-link" %>
+                        <%=link_to '1500〜5000円', "#", class:"nav-link" %>
+                        <%=link_to '5000〜10000円', "#", class:"nav-link" %>
+                        <%=link_to '10000〜20000円', "#", class:"nav-link" %>
+                        <%=link_to '20000円以上', "#", class:"nav-link" %>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSites" aria-expanded="false" aria-controls="collapseSites">
