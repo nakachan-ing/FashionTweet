@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
@@ -43,10 +43,15 @@ class PhotosController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @photos = Photo.search(params[:keyword])
+  end
+
   private
 
   def photo_params
-    params.require(:photo).permit(:snap, :title, :gender_id, :price_id, :description, { tag_ids: [] }).merge(user_id: current_user.id)
+    params.require(:photo).permit(:snap, :title, :gender_id, :price_id, :description,
+                                  { tag_ids: [] }).merge(user_id: current_user.id)
   end
 
   def set_photo
