@@ -1,11 +1,11 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_photo, only: [:show, :edit, :update]
-  before_action :move_to_index, only: [:edit, :update]
+  before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     @photos = Photo.includes(:user).order('created_at DESC')
-    @random = Photo.order("RAND()").limit(6)
+    @random = Photo.order('RAND()').limit(6)
   end
 
   def new
@@ -38,6 +38,11 @@ class PhotosController < ApplicationController
     end
   end
 
+  def destroy
+    @photo.destroy
+    redirect_to root_path
+  end
+
   private
 
   def photo_params
@@ -48,10 +53,9 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
-
   def move_to_index
     redirect_to root_path and return unless user_signed_in?
+
     redirect_to root_path unless @photo.user == current_user
   end
-
 end
