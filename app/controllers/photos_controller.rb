@@ -46,7 +46,7 @@ class PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:snap, :title, :price_id, :description, { tag_ids: [] }).merge(user_id: current_user.id)
+    params.require(:photo).permit(:snap, :title, :gender_id, :price_id, :description, { tag_ids: [] }).merge(user_id: current_user.id)
   end
 
   def set_photo

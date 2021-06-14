@@ -21,6 +21,10 @@
                     <% @photo_tags.each do |tag|%>
                       <span>#<%= tag.tag.name %></span>
                     <% end %>
+                    <br>
+                    ジャンル：<%= @photo.gender.name %>
+                    <br>
+                    Total金額：<%= @photo.price.name %>
                 </div>
                 <p class="lead"><%= @photo.description %></p>
             </div>
