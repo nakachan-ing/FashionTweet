@@ -86,17 +86,17 @@ RSpec.describe Photo, type: :model do
       it 'price_idが「---」の時' do
         @photo.price_id = 1
         @photo.valid?
-        expect(@photo.errors.full_messages).to include("Price Select")
+        expect(@photo.errors.full_messages).to include('Price Select')
       end
       it 'titleが40文字より多い時' do
         @photo.title = Faker::Lorem.characters(number: 41)
         @photo.valid?
-        expect(@photo.errors.full_messages).to include("Title is too long (maximum is 40 characters)")
+        expect(@photo.errors.full_messages).to include('Title is too long (maximum is 40 characters)')
       end
       it 'descriptionが500文字より多い時' do
         @photo.description = Faker::Lorem.characters(number: 501)
         @photo.valid?
-        expect(@photo.errors.full_messages).to include("Description is too long (maximum is 500 characters)")
+        expect(@photo.errors.full_messages).to include('Description is too long (maximum is 500 characters)')
       end
     end
   end
