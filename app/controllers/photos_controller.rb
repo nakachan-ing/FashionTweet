@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.includes(:user).order('created_at DESC')
     @random = Photo.order('RAND()').limit(6)
+    @tags = Tag.all.order('created_at DESC')
   end
 
   def new
