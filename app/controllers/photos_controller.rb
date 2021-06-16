@@ -1,12 +1,12 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  before_action :set_tags, only: [:index, :search]
   before_action :move_to_index, only: [:edit, :update, :destroy]
-
+  
   def index
     @photos = Photo.includes(:user).order('created_at DESC')
     @random = Photo.order('RAND()').limit(6)
-    @tags = Tag.all.order('created_at DESC')
   end
 
   def new
@@ -57,6 +57,10 @@ class PhotosController < ApplicationController
 
   def set_photo
     @photo = Photo.find(params[:id])
+  end
+
+  def set_tags
+    @tags = Tag.all.order('created_at DESC')
   end
 
   def move_to_index
