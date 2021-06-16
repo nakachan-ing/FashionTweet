@@ -14,15 +14,6 @@
                         <a class="nav-link" href="#">Girls</a>
                     </nav>
                 </div>
-                <!--<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseItems" aria-expanded="false" aria-controls="collapseItems">
-                    アイテムで探す
-                </a>
-                <div class="collapse" id="collapseItems" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
-                    <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Baby</a>
-                        <a class="nav-link" href="#">Kids</a>
-                    </nav>
-                </div>-->
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePrices" aria-expanded="false" aria-controls="collapsePrices">
                     値段で探す
                 </a>
@@ -46,16 +37,16 @@
                         </a>
                         <div class="collapse" id="pagesCollapseLowPrices" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="#">GU</a>
-                                <a class="nav-link" href="#">UNIQLO</a>
-                                <a class="nav-link" href="#">無印良品</a>
-                                <a class="nav-link" href="#">GAP</a>
-                                <a class="nav-link" href="#">Zara</a>
-                                <a class="nav-link" href="#">H＆M</a>
-                                <a class="nav-link" href="#">BELLE MAISON</a>
-                                <a class="nav-link" href="#">ampersand</a>
-                                <a class="nav-link" href="#">西松屋</a>
-                                <a class="nav-link" href="#">アカチャンホンポ</a>
+                                <%= link_to 'GU', "https://www.gu-global.com/jp", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'UNIQLO', "https://www.uniqlo.com/jp", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to '無印良品', "https://www.muji.com/jp/ja/store", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'GAP', "https://www.gap.co.jp/", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'Zara', "https://www.zara.com/jp/", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'H&M', "https://www2.hm.com/ja_jp/index.html", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'BELLE MAISON', "https://www.bellemaison.jp/", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'ampersand', "https://fo-online.jp/shop/fokidsmart/ampersand", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to '西松屋', "https://shop-list.com/kids/brand/nishimatsuya/", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'アカチャンホンポ', "https://akachan.omni7.jp/top", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseHighPrice" aria-expanded="false" aria-controls="pagesCollapseHighPrice">
@@ -64,12 +55,12 @@
                         </a>
                         <div class="collapse" id="pagesCollapseHighPrice" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="#">GUCCI</a>
-                                <a class="nav-link" href="#">ARMANI</a>
-                                <a class="nav-link" href="#">FENDI</a>
-                                <a class="nav-link" href="#">Burberry</a>
-                                <a class="nav-link" href="#">Stella McCartney</a>
-                                <a class="nav-link" href="#">baby Dior</a>
+                                <%= link_to 'GUCCI', "https://www.gucci.com/jp", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'ARMANI', "https://www.armani.com/jp", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'FENDI', "https://www.fendi.com/jp", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'Burberry', "https://jp.burberry.com/", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'Stella McCartney', "https://www.stellamccartney.com/jp/ja/", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
+                                <%= link_to 'baby Dior', "https://www.dior.com/ja_jp/", target: :_blank, rel: "noopener noreferrer", class:"nav-link" %>
                             </nav>
                         </div>
                     </nav>
