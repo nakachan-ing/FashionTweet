@@ -9,9 +9,9 @@
                 </a>
                 <div class="collapse" id="collapseGender" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="#">Baby</a>
-                        <a class="nav-link" href="#">Boys</a>
-                        <a class="nav-link" href="#">Girls</a>
+                        <% @photos.each do |photo|%>
+                            <%=link_to photo.gender.name, "#", class:"nav-link" %>
+                        <% end %>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePrices" aria-expanded="false" aria-controls="collapsePrices">
@@ -19,11 +19,9 @@
                 </a>
                 <div class="collapse" id="collapsePrices" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <%=link_to '0〜1500円', "#", class:"nav-link" %>
-                        <%=link_to '1500〜5000円', "#", class:"nav-link" %>
-                        <%=link_to '5000〜10000円', "#", class:"nav-link" %>
-                        <%=link_to '10000〜20000円', "#", class:"nav-link" %>
-                        <%=link_to '20000円以上', "#", class:"nav-link" %>
+                       <% @photos.each do |photo|%>
+                            <%=link_to photo.price.name, "#", class:"nav-link" %>
+                        <% end %>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseSites" aria-expanded="false" aria-controls="collapseSites">
