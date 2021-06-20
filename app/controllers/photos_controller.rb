@@ -7,6 +7,8 @@ class PhotosController < ApplicationController
   def index
     @photos = Photo.includes(:user).order('created_at DESC')
     @random = Photo.order('RAND()').limit(6)
+    @gender = Gender.find([2, 3, 4])
+    @price = Price.find([2, 3, 4, 5, 6])
   end
 
   def new
@@ -46,6 +48,8 @@ class PhotosController < ApplicationController
 
   def search
     @photos = Photo.search(params[:keyword])
+    @gender = Gender.find([2, 3, 4])
+    @price = Price.find([2, 3, 4, 5, 6])
   end
 
   private

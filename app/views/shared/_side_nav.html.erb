@@ -9,8 +9,8 @@
                 </a>
                 <div class="collapse" id="collapseGender" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <% @photos.each do |photo|%>
-                            <%=link_to photo.gender.name, "#", class:"nav-link" %>
+                        <% @gender.each do |gender|%>
+                            <%=link_to gender.name, "#", class:"nav-link" %>
                         <% end %>
                     </nav>
                 </div>
@@ -19,8 +19,8 @@
                 </a>
                 <div class="collapse" id="collapsePrices" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                       <% @photos.each do |photo|%>
-                            <%=link_to photo.price.name, "#", class:"nav-link" %>
+                       <% @price.each do |price|%>
+                            <%=link_to price.name, "#", class:"nav-link" %>
                         <% end %>
                     </nav>
                 </div>
