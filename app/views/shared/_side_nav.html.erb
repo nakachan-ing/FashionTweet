@@ -10,7 +10,7 @@
                 <div class="collapse" id="collapseGender" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <% @gender.each do |gender|%>
-                            <%=link_to gender.name, "#", class:"nav-link" %>
+                            <%=link_to gender.name, search_search_path('search[value]': gender.id, 'search[how]': "match"), class:"nav-link" %>
                         <% end %>
                     </nav>
                 </div>
@@ -20,7 +20,7 @@
                 <div class="collapse" id="collapsePrices" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                        <% @price.each do |price|%>
-                            <%=link_to price.name, "#", class:"nav-link" %>
+                            <%=link_to price.name, search_search_path('search[value]': price.id, 'search[how]': "match"), class:"nav-link" %>
                         <% end %>
                     </nav>
                 </div>

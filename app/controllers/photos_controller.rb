@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
-  before_action :set_tags, only: [:index, :search]
+  before_action :set_tags, only: :index
   before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
@@ -44,12 +44,6 @@ class PhotosController < ApplicationController
   def destroy
     @photo.destroy
     redirect_to root_path
-  end
-
-  def search
-    @photos = Photo.search(params[:keyword])
-    @gender = Gender.find([2, 3, 4])
-    @price = Price.find([2, 3, 4, 5, 6])
   end
 
   private
