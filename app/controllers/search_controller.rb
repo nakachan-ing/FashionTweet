@@ -22,11 +22,7 @@ class SearchController < ApplicationController
   end
 
   def keyword(value)
-    if value != ''
       Photo.where('title LIKE(?) OR description LIKE(?)', "%#{value}%", "%#{value}%")
-    else
-      Photo.all
-    end
   end
 
   def search_for(how, value)
@@ -35,8 +31,9 @@ class SearchController < ApplicationController
       match_gender(value)
     when 'match'
       match_price(value)
+    else
+      keyword(value) 
     end
-    keyword(value)
   end
 
 end
