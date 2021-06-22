@@ -15,11 +15,4 @@ class Photo < ApplicationRecord
     validates :gender_id
   end
 
-  # def self.search(search)
-  #   if search != ''
-  #     Photo.where('title LIKE(?) OR description LIKE(?)', "%#{search}%", "%#{search}%")
-  #   else
-  #     Photo.all
-  #   end
-  # end
 end
