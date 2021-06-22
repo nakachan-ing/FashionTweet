@@ -27,9 +27,9 @@ class SearchController < ApplicationController
 
   def search_for(how, value)
     case how                     #引数のhowと一致する処理に進むように定義しています。
-    when 'match'                 #ジャンル検索の場合はmatchで固定してるので、必ず'match'の処理に進みます。
+    when 'match_gender'                 #ジャンル検索の場合はmatchで固定してるので、必ず'match'の処理に進みます。
       match_gender(value)
-    when 'match'
+    when 'match_price'
       match_price(value)
     else
       keyword(value) 
