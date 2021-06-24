@@ -1,0 +1,49 @@
+<body class="sb-nav-fixed">
+    <%= render 'shared/header' %> 
+    <div id="layoutSidenav">
+        <%= render 'shared/side_nav' %> 
+        <div id="layoutSidenav_content">
+            <header class="bg-secondary py-5">
+                <div class="container px-4 px-lg-5 my-5">
+                    <div class="text-center text-black">
+                        <h1 class="display-4 fw-bolder">Fashion Tweet</h1>
+                        <p class="lead fw-normal text-black-50 mb-0">Baby, Kids向けトータルファッションサイト</p>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="py-5">
+                    <div class="pick-up-slide text-center">
+                        <h1 class="display-5 text-black-50 mb-0">Results</h1>
+                    </div>
+                    <div class="container px-4 px-lg-5 mt-5">
+                        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                            <% @datas.each do |data|%>
+                              <div class="col mb-5">
+                                  <div class="card", style="height: 376px;">
+                                      <%= image_tag data.snap, class: "card-img-top", style: "height: 159px;" %>
+                                      <div class="card-body p-4">
+                                          <div class="text-center">
+                                              <h5 class="fw-bolder"><%= data.title %></h5>
+                                              <div>
+                                                  <% data.photo_tags.each do |tag|%>
+                                                      <span>#<%= tag.tag.name %></span>
+                                                  <% end %>
+                                              </div>
+                                              <%=link_to data.user.nickname, user_path(data.user.id), style: "text-decoration: none; color: black;" %>
+                                          </div>
+                                      </div>
+                                      <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                          <div class="text-center"><%=link_to "詳細", photo_path(data.id), class:"btn btn-outline-dark mt-auto" %></div>
+                                      </div>
+                                  </div>
+                              </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <%= render 'shared/footer' %> 
+        </div>
+    </div>
+</body>

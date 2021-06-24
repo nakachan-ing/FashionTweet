@@ -12,9 +12,30 @@
                             <h1 class="display-5 text-black-50 mb-0">Pick Up</h1>
                         </div>
                         <section class="regular slider">
-                            <% @random.each do |photo| %>
+                            <% unless @photos.empty?%>
+                                <% @random.each do |photo| %>
+                                    <div>
+                                        <%= image_tag photo.snap %>
+                                    </div>
+                                <% end %>
+                            <% else %>
                                 <div>
-                                    <%= image_tag photo.snap %>
+                                  <img src="http://placehold.it/350x300?text=1">
+                                </div>
+                                <div>
+                                  <img src="http://placehold.it/350x300?text=2">
+                                </div>
+                                <div>
+                                  <img src="http://placehold.it/350x300?text=3">
+                                </div>
+                                <div>
+                                  <img src="http://placehold.it/350x300?text=4">
+                                </div>
+                                <div>
+                                  <img src="http://placehold.it/350x300?text=5">
+                                </div>
+                                <div>
+                                  <img src="http://placehold.it/350x300?text=6">
                                 </div>
                             <% end %>
                         </section>
@@ -32,7 +53,22 @@
                             <% unless @photos.empty? %>
                                 <%= render partial: "photo", collection: @photos %>
                             <% else %>
-                                <%= image_tag "https://dummyimage.com/450x300/dee2e6/6c757d.jpg", class: "card-img-top" %>
+                                <div class="col mb-5">
+                                    <div class="card", style="height: 376px;">
+                                        <!-- Product image-->
+                                        <img class="card-img-top" style="height: 159px;" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                                        <!-- Product details-->
+                                        <div class="card-body p-4">
+                                            <div class="text-center">
+                                                <!-- Product name-->
+                                                <h5 class="fw-bolder">投稿してください</h5>
+                                                <!-- Product price-->
+                                                ログインしてください
+                                            </div>
+                                        </div>
+                                        <!-- Product actions-->
+                                    </div>
+                                </div>
                             <% end %>
                         </div>
                     </div>
