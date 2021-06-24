@@ -2,13 +2,15 @@ class TagsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def new
+    session[:previous_url] = request.referer
     @tag = Tag.new
   end
 
   def create
+    @session = session[:previous_url]
     @tag = Tag.create(tag_params)
     if @tag.save
-      redirect_to new_photo_path
+      redirect_to @session
     else
       render :new
     end
