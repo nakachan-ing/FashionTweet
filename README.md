@@ -13,6 +13,7 @@
 
 ### Association
 - has_many :photos
+- has_many :comments
 
 
 ## photos テーブル
