@@ -5,7 +5,7 @@ class Photo < ApplicationRecord
   belongs_to :user
   has_many :photo_tags, dependent: :destroy
   has_many :tags, through: :photo_tags
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   has_one_attached :snap
   validates :snap, presence: true
@@ -15,5 +15,4 @@ class Photo < ApplicationRecord
     validates :price_id
     validates :gender_id
   end
-
 end

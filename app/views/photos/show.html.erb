@@ -48,7 +48,6 @@
                     </strong>
                 <% end %>
                 <br>
-                <div id='comments'>
                 <% @comments.each do |comment| %>
                     <p><%= image_tag comment.user.profile_image, class: "rounded-circle", size: "50x50"%>
                     <%= link_to comment.user.nickname, "/users/#{comment.user_id}", style: "text-decoration: none; color: black;", class: "fw-bold"%>
@@ -58,7 +57,6 @@
                     </div>
                     <br>
                 <% end %>
-                </div>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
   before_action :set_tags, only: :index
   before_action :move_to_index, only: [:edit, :update, :destroy]
-  
+
   def index
     @photos = Photo.includes(:user).order('created_at DESC')
     @random = Photo.order('RAND()').limit(6)
