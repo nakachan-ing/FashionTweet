@@ -48,15 +48,17 @@
                     </strong>
                 <% end %>
                 <br>
+                <div id='comments'>
                 <% @comments.each do |comment| %>
-                    <div class="flex-shrink-0"><%= image_tag comment.user.profile_image, class: "rounded-circle", size: "50x50"%></div>
-                    <div class="ms-3">
-                        <p><%= link_to comment.user.nickname, "/users/#{comment.user_id}", style: "text-decoration: none; color: black;", class: "fw-bold"%> : <%= l comment.created_at %></p>
-
+                    <p><%= image_tag comment.user.profile_image, class: "rounded-circle", size: "50x50"%>
+                    <%= link_to comment.user.nickname, "/users/#{comment.user_id}", style: "text-decoration: none; color: black;", class: "fw-bold"%>
+                    : <%= l comment.created_at %></p>
+                    <div class="ms-3", style="border-bottom: 1px solid #dee2e6;">
                         <%= comment.text %> 
-
                     </div>
+                    <br>
                 <% end %>
+                </div>
             </div>
         </div>
     </div>
