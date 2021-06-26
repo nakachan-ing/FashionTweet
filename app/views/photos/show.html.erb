@@ -37,19 +37,24 @@
         <h2 class="fw-bolder mb-4">Comments</h2>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             <div class="card-body">
-                <%= form_with(model: [@photo, @comment], local: true) do |form| %>
-                    <%= form.text_area :text, placeholder: "コメントを入力してください", class: "form-control", rows: "3" %>
-                    <br>
-                    <%= form.submit "コメントする", class:"btn btn-outline-primary" %>   
+                <% if user_signed_in? %>
+                    <%= form_with(model: [@photo, @comment], local: true) do |form| %>
+                        <%= form.text_area :text, placeholder: "コメントを入力してください", class: "form-control", rows: "3" %>
+                        <br>
+                        <%= form.submit "コメントする", class:"btn btn-outline-primary" %>   
+                    <% end %>
+                <% else %>
+                    <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+                    </strong>
                 <% end %>
                 <br>
                 <% @comments.each do |comment| %>
                     <div class="flex-shrink-0"><%= image_tag comment.user.profile_image, class: "rounded-circle", size: "50x50"%></div>
                     <div class="ms-3">
-                        <div class="fw-bold"><%= link_to comment.user.nickname, "/users/#{comment.user_id}", style: "text-decoration: none; color: black;"%></div>
-                        <p>
-                        <%= comment.text %>
-                        </p>
+                        <p><%= link_to comment.user.nickname, "/users/#{comment.user_id}", style: "text-decoration: none; color: black;", class: "fw-bold"%> : <%= l comment.created_at %></p>
+
+                        <%= comment.text %> 
+
                     </div>
                 <% end %>
             </div>
