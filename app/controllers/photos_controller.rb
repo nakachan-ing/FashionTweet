@@ -29,7 +29,7 @@ class PhotosController < ApplicationController
   def show
     @photo_tags = @photo.photo_tags.order('created_at DESC')
     @comment = Comment.new
-    @comments = @photo.comments.includes(:user)
+    @comments = @photo.comments.includes(:user).order('created_at DESC')
   end
 
   def edit
