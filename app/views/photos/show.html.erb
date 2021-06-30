@@ -49,9 +49,12 @@
                 <% end %>
                 <br>
                 <% @comments.each do |comment| %>
-                    <p><%= image_tag comment.user.profile_image, class: "rounded-circle", size: "50x50"%>
+                    <p>
+                    <%= image_tag comment.user.profile_image, class: "rounded-circle", size: "50x50"%>
                     <%= link_to comment.user.nickname, "/users/#{comment.user_id}", style: "text-decoration: none; color: black;", class: "fw-bold"%>
-                    : <%= l comment.created_at %></p>
+                    : <%= l comment.created_at %>
+                    <%=link_to "削除", "/photos/#{comment.photo.id}/comments/#{comment.id}", method: :delete, class:"btn btn-outline-secondary" %>
+                    </p>
                     <div class="ms-3", style="border-bottom: 1px solid #dee2e6;">
                         <%= comment.text %> 
                     </div>
