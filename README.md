@@ -13,6 +13,7 @@
 
 ### Association
 - has_many :photos
+- has_many :comments
 
 
 ## photos テーブル
@@ -28,6 +29,7 @@
 - belongs_to :user
 - has_many :photo_tags
 - has_many :tags, through: :photo_tags
+- has_many :comments
 
 
 ## tags テーブル

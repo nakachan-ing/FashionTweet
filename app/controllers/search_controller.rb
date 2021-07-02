@@ -1,11 +1,10 @@
-class SearchController < ApplicationController 
-
+class SearchController < ApplicationController
   def search
     @gender = Gender.find([2, 3, 4])
     @price = Price.find([2, 3, 4, 5, 6])
     @tags = Tag.all.order('created_at DESC')
-    @value = params["search"]["value"]
-    @how = params["search"]["how"]
+    @value = params['search']['value']
+    @how = params['search']['how']
     @datas = search_for(@how, @value)
   end
 
@@ -23,7 +22,7 @@ class SearchController < ApplicationController
     Photo.where(id: PhotoTag.select(:photo_id)
     .where(tag_id: value)
     .group(:photo_id)
-    .having("COUNT(DISTINCT photo_tags.tag_id) = ?", value.size))
+    .having('COUNT(DISTINCT photo_tags.tag_id) = ?', value.size))
   end
 
   def keyword(value)
@@ -39,8 +38,7 @@ class SearchController < ApplicationController
     when 'match_tag'
       match_tag(value)
     else
-      keyword(value) 
+      keyword(value)
     end
   end
-
 end
