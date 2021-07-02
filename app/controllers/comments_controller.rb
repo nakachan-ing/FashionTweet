@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_to request.referer
   end
@@ -28,5 +27,4 @@ class CommentsController < ApplicationController
 
     redirect_to request.referer unless @comment.user == current_user
   end
-
 end
