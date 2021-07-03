@@ -1,0 +1,151 @@
+# README
+[**English**](README_EN.md)
+## アプリ名
+### FashionTweet
+--------------------------------------
+## 概要
+### FashionTweetはBaby, Kids向けのコーディネート検索サイトである。 ユーザー登録の有無にかかわらず、すべての利用者は投稿一覧と詳細閲覧とスナップの検索が可能となっている。 外部サイトにアクセスしてアイテムを検索することも可能である。 登録ユーザーのみがスナップを投稿、編集、削除及びコメントの投稿、削除が可能だ。 SNS認証によるログインにも対応しており、GoogleとFacebookがサポート対象である。
+--------------------------------------
+## 本番環境
+###
+--------------------------------------
+## 制作背景
+### 大人向けのファッションサイトは数多く存在し、コーディネートの検索がしやすいですが、子供向けに特化したサイトは検索しても結果にヒットするものが少ないことが今回の制作背景である。
+### 利用対象者は下記のように想定している。
+- 20代から30代の母親とそのパートナー
+- 共働きもしくは一人親世帯
+- ユーザー自身が服が好き
+### そして、
+- 仕事中のスキマ時間や休憩時間に暇潰しでスマホを見る時
+- 子どもと自宅で過ごしているときのコミュニケーションツールの一つとして
+- 実際に店頭に行かずにコーディネートを考えたい時
+### といった時に利用してもらえるよう制作した。
+### そして、このアプリケーション一つで、子供の成長に合わせて、性別、価格、アイテム、フリーワードなどのさまざまな条件で服を検索できるようにしている。
+--------------------------------------
+## 要件定義
+### ユーザー機能
+- ログインすることによって、スナップの投稿やコメント投稿、スナップ編集、削除などを可能にする
+### マイページ機能
+- ユーザー自身が投稿したスナップの一覧表示やプロフィールを表示することを可能にする
+### スナップ投稿機能
+- スナップの投稿を可能にする
+### スナップ一覧表示機能
+- ユーザー以外もスナップ閲覧できることを可能にする
+- ある程度のカテゴリにあらかじめ分けておいて、カテゴリの一覧表示されることを可能にする
+### スナップ詳細表示機能
+- 投稿されたスナップの詳細が表示されることを可能にする
+### スナップ編集機能
+- スナップの編集を可能にする
+### スナップ削除機能
+- スナップの削除を可能にする
+### スナップ検索機能
+- 複数条件を指定した上で参考にしたいスナップの検索を可能にする
+### コメント投稿機能
+- スナップ投稿者に対して、コーディネートに対する質問、コメントを可能にする
+### コメント削除機能
+- 投稿済みのコメントの削除を可能にする
+### SNS認証
+- SNSアカウント（Googleアカウン、Facebookアカウント）を利用したログイン方法を選択肢として追加する
+--------------------------------------
+## DEMO
+
+--------------------------------------
+## 使用技術（開発環境）
+### バックエンド
+- Ruby, Ruby on Rails
+
+--------------------------------------
+### フロントエンド
+- HTML, CSS, JavaScript, JQuery, Ajax
+
+--------------------------------------
+### データベース
+- MySQL, SequelPro
+
+--------------------------------------
+### インフラ
+--------------------------------------
+### Webサーバ（本番環境）
+--------------------------------------
+### アプリケーションサーバ（本番環境）
+--------------------------------------
+### ソース管理
+- Github, GitHubDesktop
+
+--------------------------------------
+### テスト
+- RSpec
+
+--------------------------------------
+### エディタ
+- VSCode
+
+--------------------------------------
+## DB設計
+[![Image from Gyazo](https://i.gyazo.com/4a621b7ec7b29ce76f3026b8c0e1857e.png)](https://gyazo.com/4a621b7ec7b29ce76f3026b8c0e1857e)
+
+### users table
+| Column        | Type          | Options     |
+| ------------  | --------------| ----------- |
+| first_name    | string        | null: false |
+| last_name     | string        | null: false |
+| nickname      | string        | null: false |
+| email         | string        | null: false |
+| password      | string        | null: false |
+| introduction  | string        |             |
+| profile_image | ActiveStorage |             |
+
+### Association
+- has_many :photos
+- has_many :comments
+
+
+### photos table
+| Column      | Type          | Options                        |
+| ----------- | ------------- | ------------------------------ |
+| snap        | ActiveStorage | null: false                    |
+| title       | string        | null: false                    |
+| description | string        | null: false                    |
+| price_id    | integer       | null: false                    |
+| user_id     | references    | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- has_many :photo_tags
+- has_many :tags, through: :photo_tags
+- has_many :comments
+
+
+### tags table
+| Column | Type    | Options     |
+| ------ | ------- | ----------- |
+| name   | integer | null: false |
+
+### Association
+- has_many :photo_tags
+- has_many :photos, through: :photo_tags
+
+
+### photo_tags table
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| photo_id | references | null: false, foreign_key: true |
+| tag_id   | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :photo
+- belongs_to :tag
+
+### comments table
+| Column  | Type       | Options                        |
+| ------  | :--------- | ------------------------------ |
+| text    | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| photo   | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :photo
+
+--------------------------------------
+## How to work in the local environment
