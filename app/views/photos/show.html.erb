@@ -50,7 +50,11 @@
                 <br>
                 <% @comments.each do |comment| %>
                     <p>
-                    <%= image_tag comment.user.profile_image, class: "rounded-circle", size: "50x50"%>
+                    <% unless comment.user.profile_image.blank?%>
+                        <%= image_tag comment.user.profile_image, class: "rounded-circle", size: "50x50"%>
+                    <% else %>
+                         <%= image_tag "https://dummyimage.com/900x400/dee2e6/6c757d.jpg", class: "rounded-circle", size: "50x50"%>
+                    <% end %>
                     <%= link_to comment.user.nickname, "/users/#{comment.user_id}", style: "text-decoration: none; color: black;", class: "fw-bold"%>
                     : <%= l comment.created_at %>
                     <%=link_to "削除", "/photos/#{comment.photo.id}/comments/#{comment.id}", method: :delete, class:"btn btn-outline-secondary" %>
