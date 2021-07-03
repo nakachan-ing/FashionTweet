@@ -1,5 +1,5 @@
 # README
-[**Japanese**](README_JA.md)
+[**Japanese**](README.md)
 ## Application
 ### FashionTweet
 --------------------------------------
