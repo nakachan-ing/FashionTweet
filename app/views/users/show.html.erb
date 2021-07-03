@@ -36,7 +36,16 @@
                 <% unless @photos.empty? %>
                     <%= render partial: "photos/photo", collection: @photos %>
                 <% else %>
-                    <%= image_tag "https://dummyimage.com/450x300/dee2e6/6c757d.jpg", class: "card-img-top" %>
+                    <div class="col mb-5">
+                        <div class="card", style="height: 376px;">
+                            <%= image_tag "https://dummyimage.com/450x300/dee2e6/6c757d.jpg", class: "card-img-top", style: "height: 159px;" %>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">投稿してください</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <% end %>
             </div>
         </div>

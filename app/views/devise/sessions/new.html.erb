@@ -39,10 +39,10 @@
                                         </div>
                                         <%= f.submit "Login", class: "btn btn-primary btn-user btn-block" %>
                                         <hr>
-                                        <%= link_to new_user_session_path, class: "btn btn-google btn-user btn-block" do %>
+                                        <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "btn btn-google btn-user btn-block" do %>
                                           <i class="fab fa-google fa-fw"></i>Login with Google
                                         <% end %>
-                                        <%= link_to new_user_session_path, class: "btn btn-facebook btn-user btn-block" do %>
+                                        <%= link_to user_facebook_omniauth_authorize_path, method: :post, class: "btn btn-facebook btn-user btn-block" do %>
                                           <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                         <% end %>
                                     <% end %>
