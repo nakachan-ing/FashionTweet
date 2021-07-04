@@ -6,11 +6,11 @@
 ## Application overview
 ### This application is a fashion site for children's clothing. With or without registration, all application visitors can view the snap list and details, and search for snaps. It is also possible to access and search external sites. Registered users can post, edit and delete snaps. It is possible to log in by SNS authentication, supports Google and Facebook.
 --------------------------------------
-## URL
-###
---------------------------------------
-## Test account
-###
+## Production environment
+### https://fashiontweet-34277.herokuapp.com/
+### Test account
+- email : sample@sample
+- password : aaaa1111
 --------------------------------------
 ## How to Use
 ### It is supposed to be used in such cases.
