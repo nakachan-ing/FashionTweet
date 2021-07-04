@@ -49,7 +49,41 @@ search for clothes by gender, price, item and free word.
 - It is possible to log in by SNS authentication, supports Google and Facebook.
 --------------------------------------
 ## Description of the implemented function
+### Snap list
+[![Image from Gyazo](https://i.gyazo.com/d0a8eb301deb108cafb2a2b0de1987d4.gif)](https://gyazo.com/d0a8eb301deb108cafb2a2b0de1987d4)
+- With or without registration, all application visitors can view the snap list.
+- It is possible to search under various conditions in the header and sidebar.
 
+### Search for snaps
+[![Image from Gyazo](https://i.gyazo.com/93e24a46f1c2af72fe7a320a40946b5c.gif)](https://gyazo.com/93e24a46f1c2af72fe7a320a40946b5c)
+- ログインの有無に関わらず、スナップの検索は可能である。
+- ジャンル、値段、外部サイト、タグ、フリーワードでスナップの検索を可能にしている。
+
+### User registration
+[![Image from Gyazo](https://i.gyazo.com/94512ef5462bf7f82ff7fad1e395a6a3.gif)](https://gyazo.com/94512ef5462bf7f82ff7fad1e395a6a3)
+- If you enter the first_name, last_name, email, and password correctly, you can register a new one.
+- If any of the items is empty or not entered correctly, new registration is not possible.
+
+### User My Page
+[![Image from Gyazo](https://i.gyazo.com/cc77cf68f8b4b372b6bb0243d7bdfacd.gif)](https://gyazo.com/cc77cf68f8b4b372b6bb0243d7bdfacd)
+[![Image from Gyazo](https://i.gyazo.com/e7eeded143ce9335d6de6cab620332b9.gif)](https://gyazo.com/e7eeded143ce9335d6de6cab620332b9)
+- In My Page, you can edit and update first_name, last_name, email, and introduction.
+
+### Post new snap
+[![Image from Gyazo](https://i.gyazo.com/8aa6c3e576007b83a61f9de691a2ff88.gif)](https://gyazo.com/8aa6c3e576007b83a61f9de691a2ff88)
+[![Image from Gyazo](https://i.gyazo.com/ef5dc4ccceb8566c9d607512ad1c4949.gif)](https://gyazo.com/ef5dc4ccceb8566c9d607512ad1c4949)
+- If you enter all the items correctly, you can post a new post.
+- You can also register new tags on the new posting screen.
+### Retail of snap
+[![Image from Gyazo](https://i.gyazo.com/30b81b59e61016bc766b8cd22224eff1.gif)](https://gyazo.com/30b81b59e61016bc766b8cd22224eff1)
+### Edit snap
+[![Image from Gyazo](https://i.gyazo.com/e68c9d72c123a728ac82663e25c8d039.gif)](https://gyazo.com/e68c9d72c123a728ac82663e25c8d039)
+### Delete snap
+[![Image from Gyazo](https://i.gyazo.com/c325e9191251e0735e04bcab1290e558.gif)](https://gyazo.com/c325e9191251e0735e04bcab1290e558)
+### Post new comment
+[![Image from Gyazo](https://i.gyazo.com/1b147edc0641d88bbe6f6e3a67322e5c.gif)](https://gyazo.com/1b147edc0641d88bbe6f6e3a67322e5c)
+### Delete comment
+[![Image from Gyazo](https://i.gyazo.com/60909269e4147f06c0d98509cd838030.gif)](https://gyazo.com/60909269e4147f06c0d98509cd838030)
 --------------------------------------
 ## Development environment
 ### Front-end

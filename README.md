@@ -59,16 +59,29 @@
 - ジャンル、値段、外部サイト、タグ、フリーワードでスナップの検索を可能にしている。
 
 ### 新規登録画面
+[![Image from Gyazo](https://i.gyazo.com/94512ef5462bf7f82ff7fad1e395a6a3.gif)](https://gyazo.com/94512ef5462bf7f82ff7fad1e395a6a3)
+- first_name, last_name, email, passwordを全て正しく入力すると新規登録ができる。
+- いずれの項目が空もしくは正しく入力されていない時は新規登録できない。
 
 ### マイページ画面（詳細表示、編集表示画面）
+[![Image from Gyazo](https://i.gyazo.com/cc77cf68f8b4b372b6bb0243d7bdfacd.gif)](https://gyazo.com/cc77cf68f8b4b372b6bb0243d7bdfacd)
+[![Image from Gyazo](https://i.gyazo.com/e7eeded143ce9335d6de6cab620332b9.gif)](https://gyazo.com/e7eeded143ce9335d6de6cab620332b9)
+- マイページではfirst_name, last_name, email, introductionが編集、更新できるようになっている。
 ### スナップ新規投稿画面
+[![Image from Gyazo](https://i.gyazo.com/8aa6c3e576007b83a61f9de691a2ff88.gif)](https://gyazo.com/8aa6c3e576007b83a61f9de691a2ff88)
+[![Image from Gyazo](https://i.gyazo.com/ef5dc4ccceb8566c9d607512ad1c4949.gif)](https://gyazo.com/ef5dc4ccceb8566c9d607512ad1c4949)
+- 全ての項目を正しく入力すると新規投稿ができる
+- 新規投稿画面でタグの新規登録も可能である。
+### スナップ詳細画面
+[![Image from Gyazo](https://i.gyazo.com/30b81b59e61016bc766b8cd22224eff1.gif)](https://gyazo.com/30b81b59e61016bc766b8cd22224eff1)
 ### スナップ編集画面
+[![Image from Gyazo](https://i.gyazo.com/e68c9d72c123a728ac82663e25c8d039.gif)](https://gyazo.com/e68c9d72c123a728ac82663e25c8d039)
 ### スナップ削除画面
+[![Image from Gyazo](https://i.gyazo.com/c325e9191251e0735e04bcab1290e558.gif)](https://gyazo.com/c325e9191251e0735e04bcab1290e558)
 ### コメント投稿画面
+[![Image from Gyazo](https://i.gyazo.com/1b147edc0641d88bbe6f6e3a67322e5c.gif)](https://gyazo.com/1b147edc0641d88bbe6f6e3a67322e5c)
 ### 投稿削除画面
-
-
-
+[![Image from Gyazo](https://i.gyazo.com/60909269e4147f06c0d98509cd838030.gif)](https://gyazo.com/60909269e4147f06c0d98509cd838030)
 
 --------------------------------------
 ## 使用技術（開発環境）
