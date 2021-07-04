@@ -56,8 +56,8 @@ search for clothes by gender, price, item and free word.
 
 ### Search for snaps
 [![Image from Gyazo](https://i.gyazo.com/93e24a46f1c2af72fe7a320a40946b5c.gif)](https://gyazo.com/93e24a46f1c2af72fe7a320a40946b5c)
-- ログインの有無に関わらず、スナップの検索は可能である。
-- ジャンル、値段、外部サイト、タグ、フリーワードでスナップの検索を可能にしている。
+- Regardless of the presence or absence of a login, snap of the search is possible.
+- It enables you to search for snaps by genre, price, external site, tag, and free word.
 
 ### User registration
 [![Image from Gyazo](https://i.gyazo.com/94512ef5462bf7f82ff7fad1e395a6a3.gif)](https://gyazo.com/94512ef5462bf7f82ff7fad1e395a6a3)
