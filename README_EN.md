@@ -99,10 +99,8 @@ search for clothes by gender, price, item and free word.
 
 --------------------------------------
 ### Infrastructure development
---------------------------------------
-### Web Server（Production environment）
---------------------------------------
-### Application Server（Production environment）
+- Heroku
+
 --------------------------------------
 ### Source control
 - Github, GitHubDesktop
@@ -181,6 +179,3 @@ search for clothes by gender, price, item and free word.
 ### Association
 - belongs_to :user
 - belongs_to :photo
-
---------------------------------------
-## How to work in the local environment
