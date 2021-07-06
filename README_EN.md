@@ -86,11 +86,11 @@ search for clothes by gender, price, item and free word.
 [![Image from Gyazo](https://i.gyazo.com/60909269e4147f06c0d98509cd838030.gif)](https://gyazo.com/60909269e4147f06c0d98509cd838030)
 --------------------------------------
 ## Development environment
-### Front-end
+### Back-end
 - Ruby, Ruby on Rails
 
 --------------------------------------
-### Back-end
+### Front-end
 - HTML, CSS, JavaScript, JQuery, Ajax
 
 --------------------------------------
