@@ -21,8 +21,7 @@ class SearchController < ApplicationController
   def match_tag(value)
     Photo.where(id: PhotoTag.select(:photo_id)
     .where(tag_id: value)
-    .group(:photo_id)
-    .having('COUNT(DISTINCT photo_tags.tag_id) = ?', value.size))
+    .group(:photo_id))
   end
 
   def keyword(value)
